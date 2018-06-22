@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Entity))]
 public class Player : MonoBehaviour {
 
     [SerializeField]
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        GetComponent<Entity>().OnKilled += () => Application.Quit();
 	}
 	
 	// Update is called once per frame

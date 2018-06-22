@@ -17,14 +17,14 @@ public class GUI : MonoBehaviour {
         FindObjectOfType<Player>().GetComponent<Entity>().
             OnHealthChanged += health => //subskrybcja zdarzenia (?)
         {
-            HealthCounter.text = health.ToString();
+            HealthCounter.text = health.ToString("N0");
 
         };
 
 
         FindObjectOfType<PlayerShooting>().OnBulletsChanged += bullets => //subskrybcja zdarzenia (?)
         {
-            BulletCounter.text = bullets.ToString();
+            BulletCounter.text = bullets.ToString("N0");
 
         };
 	}
